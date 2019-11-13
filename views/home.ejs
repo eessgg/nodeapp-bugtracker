@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css" rel="stylesheet">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <title>Document</title>
+    <script>
+        document.onreadystatechange = () => {
+                if(document.readyState === 'interactive'){
+                    document.getElementById('userAgent').value = window.navigator.userAgent
+                    document.getElementById('userDate').value = new Date()
+                    console.log(new Date())
+                }
+            }
+    </script>
+</head>
+
+<body>
+
+    <div class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column">
+                    <section class="hero">
+                        <div class="hero-body">
+                            <div class="container">
+                                <figure class="image is-128x128">
+                                    <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/bug-computer-3-1118652.png">
+                                </figure>
+                                <h1 class="title">
+                                    BugTracker - Relatório de Bugs na aplicação
+                                </h1>
+                                <h2 class="subtitle">
+                                    Envie para seu time de desenvolvedores os bugs encontrados na aplicação e mantenha o código sempre limpo.
+                                </h2>
+
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="column">
+                    <form method="POST" style="background: rgb(176, 189, 190); padding: 24px;">
+                        <div class="field">
+                            <label class="label">Nome:</label>
+                            <div class="control">
+                                <input class="input" name="name" placeholder="Text input" type="text" required>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Email:</label>
+                            <div class="control">
+                                <input class="input" name="email" placeholder="Text input" type="text" required>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label class="label">Classificação:</label>
+                            <div class="control">
+                                <div class="select">
+                                    <select id="issueType" name="issueType">
+                                            <option value=" ">selections</option>
+                                            <option value="BUG ">BUG</option>
+                                            <option value="CRITICAL ">CRITICAL</option>
+                                            <option value="ENHANCEMENT ">Melhoria</option>
+                                        </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label" for="howToReproduce">Como reproduzir erro:</label>
+                            <div class="control">
+                                <input class="input" id="howToReproduce" name="howToReproduce" placeholder="Text input" type="text">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label" for="expectedOutput">Saída esperada:</label>
+                            <div class="control">
+                                <textarea class="textarea" id="expectedOutput" name="expectedOutput" placeholder="expected output"></textarea>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label" for="receivedOutput">Saída recebida:</label>
+                            <div class="control">
+                                <textarea class="textarea" id="receivedOutput" name="receivedOutput" placeholder="received output"></textarea>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <input id="userAgent" name="userAgent" type="hidden" />
+                            <input id="userDate" name="userDate" type="hidden" />
+                        </div>
+
+                        <button class="button is-primary">Enivar Solicitação</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                Made by <strong> ~ eessgg ~ </strong> 
+            </p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
