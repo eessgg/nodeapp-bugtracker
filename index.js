@@ -6,9 +6,9 @@ const sgMail = require('@sendgrid/mail');
 
 const GoogleSpreasheet = require('google-spreadsheet')
 const credentials = require('./bugtracker.json')
-const docId = '1lULurb2uxQA0W3QiYBJHe3jFqPOMG3ZjWOjsT3nzc2M'
+const docId = proccess.env.DOC_ID
 const worksheetIndex = 0
-const sendGridKey = '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'
+const sendGridKey = proccess.env.SENDGRID_KEY
 
 app.set('view engine', 'ejs')
 app.set('views', path.resolve(__dirname, 'views'))

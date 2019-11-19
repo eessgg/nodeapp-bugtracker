@@ -4,7 +4,7 @@ const credentials = require('./bugtracker.json')
 const { promify } = require('util')
 
 const addRowToSheet = async() => {
-  const doc = new GoogleSpreadsheet('1lULurb2uxQA0W3QiYBJHe3jFqPOMG3ZjWOjsT3nzc2M')
+  const doc = new GoogleSpreadsheet('')
   await promify(doc.useServiceAccountAut)(credentials)
   console.log('open')
   const info = promify(doc.getInfo)()
